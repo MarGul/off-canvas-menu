@@ -57,6 +57,12 @@ body.mobile-nav-open #mobile-nav-toggle:before {
 	width: 300px;
 }
 
+.logo {
+	position: relative;
+	left: 50px;
+	max-width: 80%;
+}
+
 .nav-item a {
 	display: block;
 	padding: 1em;
