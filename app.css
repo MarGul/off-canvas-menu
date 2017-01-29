@@ -17,16 +17,25 @@ html {
 }
 
 #mobile-nav-toggle {
-	display: block;
-	position: absolute;
-	font-size: 30px;
+	position: relative;
+	font-size: 27px;
 	color: #7d8793;
-	top: 0;
-	left: 0;
-	padding: 10px 0px 10px 15px;
   	z-index: 2;
   	cursor: pointer;
-  	transition: left 0.3s ease-out;
+}
+
+#mobile-nav-toggle:before {
+    content: "\f0c9"; 
+    font-family: FontAwesome;
+    height: 50px;
+    left: 10px;
+    position: absolute;
+    top: 0;
+    line-height: 45px;
+}
+
+body.mobile-nav-open #mobile-nav-toggle:before {
+	content: "\f00d";
 }
 
 .mobile-nav {
@@ -42,11 +51,6 @@ html {
 	list-style-type: none;
 	background: #4D545D;
 	width: 300px;
-	box-shadow: 5px 1px 5px rgba(0,0,0,0.4);
-}
-
-body.mobile-nav-open .mobile-nav {
-	/*z-index: 3; // Look at keyframes for this*/
 }
 
 .nav-item a {
@@ -84,6 +88,7 @@ body.mobile-nav-open .site-wrap {
 	display: none;
 	background: rgba(0,0,0,0.7);
 	z-index: 5;
+	box-shadow: inset 5px 0px 5px rgba(0,0,0,0.7);
 }
 
 body.mobile-nav-open .overlay {
