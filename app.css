@@ -14,6 +14,7 @@ html {
 }
 
 .mobile-nav-header {
+	position: relative;
 	height: 50px;
 	width: 100%;
 	background: #f6f6f6;
@@ -21,25 +22,54 @@ html {
 }
 
 #mobile-nav-toggle {
-	position: relative;
-	font-size: 27px;
-	color: #7d8793;
-  	z-index: 2;
-  	cursor: pointer;
+	position: absolute;
+	height: 50px;
+	width: 35px;
+	left: 15px;
+	padding-top: 22px;
 }
 
-#mobile-nav-toggle:before {
-    content: "\f0c9"; 
-    font-family: FontAwesome;
-    height: 50px;
-    left: 10px;
-    position: absolute;
-    top: 0;
-    line-height: 45px;
+#mobile-nav-toggle:focus {
+	outline: none;
 }
 
-body.mobile-nav-open #mobile-nav-toggle:before {
-	content: "\f00d";
+#mobile-nav-toggle span,
+#mobile-nav-toggle span:before,
+#mobile-nav-toggle span:after {
+	cursor: pointer;
+	border-radius: 1px;
+	height: 5px;
+	width: 35px;
+	background: #7d8793;
+	position: absolute;
+	display: block;
+	content: "";
+	transition: all 0.5s ease-in-out;
+}
+
+body.mobile-nav-open #mobile-nav-toggle span {
+	background: transparent;
+}
+
+body.mobile-nav-open #mobile-nav-toggle span:before,
+body.mobile-nav-open #mobile-nav-toggle span:after {
+	top: 0;
+}
+
+#mobile-nav-toggle span:before {
+	top: -10px;
+}
+
+body.mobile-nav-open #mobile-nav-toggle span:before {
+	transform: rotate(45deg);
+}
+
+#mobile-nav-toggle span:after {
+	bottom: -10px;
+}
+
+body.mobile-nav-open #mobile-nav-toggle span:after {
+	transform: rotate(-45deg);
 }
 
 .mobile-nav {
@@ -84,7 +114,7 @@ body.mobile-nav-open #mobile-nav-toggle:before {
 	bottom: 100%;
 	left: 0;
 	z-index: 1;
-	transition: left 0.3s ease-out;
+	transition: left 0.5s ease-out;
 }
 
 body.mobile-nav-open .site-wrap {
