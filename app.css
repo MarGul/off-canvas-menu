@@ -61,7 +61,9 @@ body.mobile-nav-open #mobile-nav-toggle span:after {
 }
 
 body.mobile-nav-open #mobile-nav-toggle span:before {
-	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+			transform: rotate(45deg);
 }
 
 #mobile-nav-toggle span:after {
@@ -69,7 +71,9 @@ body.mobile-nav-open #mobile-nav-toggle span:before {
 }
 
 body.mobile-nav-open #mobile-nav-toggle span:after {
-	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+		-ms-transform: rotate(-45deg);
+			transform: rotate(-45deg);
 }
 
 .mobile-nav {
